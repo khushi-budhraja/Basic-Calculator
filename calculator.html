@@ -4,41 +4,42 @@
     <link rel="stylesheet" href="calculator.css">
     <title>Calculator</title>
 </head>
-<body>
+<body style="background-color: rgb(118, 249, 190);">
     <div id = "calculator">
         <input type="text"  id="cal-input" readonly>
+
         <div class="buttons-display">
-            <button class="button" onclick="displayValue+='1';document.querySelector('#cal-input').value = displayValue">1</button>
+            <button class="button" onclick="updateValue('1')">1</button>
 
-            <button class="button" onclick="displayValue+='2';document.querySelector('#cal-input').value = displayValue">2</button>
+            <button class="button" onclick="updateValue('2')">2</button>
 
-            <button class="button" onclick="displayValue+='3';document.querySelector('#cal-input').value = displayValue">3</button>
+            <button class="button" onclick="updateValue('3')">3</button>
 
             <button class="button" onclick="displayValue='';document.querySelector('#cal-input').value = displayValue">C</button>
 
-            <button class="button" onclick="displayValue+='4';document.querySelector('#cal-input').value = displayValue">4</button>
+            <button class="button" onclick="updateValue('4')">4</button>
 
-            <button class="button" onclick="displayValue+='5';document.querySelector('#cal-input').value = displayValue">5</button>
+            <button class="button" onclick="updateValue('5')">5</button>
 
-            <button class="button" onclick="displayValue+='6';document.querySelector('#cal-input').value = displayValue">6</button>
+            <button class="button" onclick="updateValue('6')">6</button>
 
-            <button class="button" onclick="displayValue+='+';document.querySelector('#cal-input').value = displayValue">+</button>
+            <button class="button" onclick="updateValue('+')">+</button>
 
-            <button class="button" onclick="displayValue+='7';document.querySelector('#cal-input').value = displayValue">7</button>
+            <button class="button" onclick="updateValue('7')">7</button>
 
-            <button class="button" onclick="displayValue+='8';document.querySelector('#cal-input').value = displayValue">8</button>
+            <button class="button" onclick="updateValue('8')">8</button>
 
-            <button class="button" onclick="displayValue+='9';document.querySelector('#cal-input').value = displayValue">9</button>
+            <button class="button" onclick="updateValue('9')">9</button>
 
-            <button class="button" onclick="displayValue+='-';document.querySelector('#cal-input').value = displayValue">-</button>
+            <button class="button" onclick="updateValue('-')">-</button>
 
-            <button class="button" onclick="displayValue+='.';document.querySelector('#cal-input').value = displayValue">.</button>
+            <button class="button" onclick="updateValue('.')">.</button>
 
-            <button class="button" onclick="displayValue+='0';document.querySelector('#cal-input').value = displayValue">0</button>
+            <button class="button" onclick="updateValue('0')">0</button>
 
-            <button class="button" onclick="displayValue+='*';document.querySelector('#cal-input').value = displayValue">*</button>
+            <button class="button" onclick="updateValue('*')">*</button>
 
-            <button class="button" onclick="displayValue+='/';document.querySelector('#cal-input').value = displayValue">/</button>
+            <button class="button" onclick="updateValue('/')">/</button>
 
             <button class="button" onclick="let result = eval(displayValue);
             displayValue = result;document.querySelector('#cal-input').value = displayValue">=</button>
@@ -48,6 +49,11 @@
     <script>
         let displayValue = "";
         document.querySelector("#cal-input").value = displayValue;
+
+        function updateValue(value){
+            displayValue+=`${value}`;
+            document.querySelector('#cal-input').value = displayValue;
+        }
     </script>
 </body>
 </html>
